@@ -1,4 +1,4 @@
-package cookcloud.model;
+package cookcloud.entity;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -19,41 +19,30 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "MEMBER")
-public class Member implements Serializable{
+@Table(name = "LIKE")
+public class Like implements Serializable {
+
+	private static final long serialVersionUID = 258904516221807L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String mem_id;
-
-	@Column
-	private String mem_password;
-
-	@Column
-	private String mem_name;
-
-	@Column
-	private String mem_nickname;
-
-	@Column
-	private String mem_email;
-
-	@Column
-	private String mem_phone;
+	@Column(name = "LIKE_ID")
+	private Long likeId;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	private LocalDateTime mem_insert_at;
+	@Column(name = "LIKE_AT")
+	private LocalDateTime likeAt;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private LocalDateTime mem_delete_at;
+	@Column(name = "LIKE_IS_LIKED", columnDefinition = "CHAR(1)")
+	private String likeIsLiked;
 
-	@Column
-	private Long mem_report_count;
+	@Column(name = "MEM_ID", columnDefinition = "VARCHAR2(20)")
+	private String memId;
 
-	@Column
-	private Long role_code;
+	@Column(name = "REVIEW_ID")
+	private Long reviewId;
 
-	@Column
-	private Long mem_status_code;
+	@Column(name = "RECIPE_ID")
+	private Long recipeId;
 
 }
