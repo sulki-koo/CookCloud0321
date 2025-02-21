@@ -26,29 +26,29 @@ public class Message implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "MESSAGE_ID")
+	@Column(name = "MESSAGE_ID", nullable = false)
 	private Long messageId;
 
-	@Column(name = "MESSAGE_TITLE", columnDefinition = "NVARCHAR2(30)")
+	@Column(name = "MESSAGE_TITLE", columnDefinition = "NVARCHAR2(30)", nullable = false)
 	private String messageTitle;
 
-	@Column(name = "MESSAGE_CONTENT", columnDefinition = "NVARCHAR2(1000)")
+	@Column(name = "MESSAGE_CONTENT", columnDefinition = "NVARCHAR2(1000)", nullable = false)
 	private String messageContent;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "MESSAGE_SEND_AT")
+	@Column(name = "MESSAGE_SEND_AT", nullable = false)
 	private LocalDateTime messageSendAt;
 
-	@Column(name = "MESSAGE_IS_READ", columnDefinition = "CHAR(1)")
+	@Column(name = "MESSAGE_IS_READ", columnDefinition = "CHAR(1)", nullable = false)
 	private String messageIsRead;
 
-	@Column(name = "MESSAGE_IS_DELETED", columnDefinition = "CHAR(1)")
+	@Column(name = "MESSAGE_IS_DELETED", columnDefinition = "CHAR(1)", nullable = false)
 	private String messageIsDeleted;
 
-	@Column(name = "MESSAGE_CODE")
+	@Column(name = "MESSAGE_CODE", nullable = false)
 	private Long messageCode;
 
-	@Column(name = "MEM_ID", columnDefinition = "VARCHAR2(20)")
+	@Column(name = "MEM_ID", columnDefinition = "VARCHAR2(20)", nullable = false)
 	private String memId;
 
 }

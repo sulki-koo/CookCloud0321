@@ -26,27 +26,27 @@ public class Report implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="REPORT_ID")
+	@Column(name="REPORT_ID", nullable = false)
 	private Long reportId;
 
-	@Column(name="REPORT_REASON", columnDefinition = "NVARCHAR2(500)")
+	@Column(name="REPORT_REASON", columnDefinition = "NVARCHAR2(500)", nullable = false)
 	private String reportReason;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="REPORT_SEND_AT")
+	@Column(name="REPORT_SEND_AT", nullable = false)
 	private LocalDateTime reportSendAt;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="REPORT_PROC_AT")
 	private LocalDateTime reportProcAt;
 
-	@Column(name="REPORT_IS_PROC", columnDefinition = "CHAR(1)")
+	@Column(name="REPORT_IS_PROC", columnDefinition = "CHAR(1)", nullable = false)
 	private String reportIsProc;
 
-	@Column(name="REPORT_IS_SEND", columnDefinition = "CHAR(1)")
+	@Column(name="REPORT_IS_SEND", columnDefinition = "CHAR(1)", nullable = false)
 	private String reportIsSend;
 
-	@Column(name="REPORT_CODE")
+	@Column(name="REPORT_CODE", nullable = false)
 	private Long reportCode;
 
 	@Column(name="RECIPE_ID")

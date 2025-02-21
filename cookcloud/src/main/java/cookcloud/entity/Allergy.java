@@ -23,10 +23,10 @@ public class Allergy implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ALLERGY_ID")
+	@Column(name = "ALLERGY_ID", nullable = false)
 	private Long allergyId;
 
-	@Column(name = "ALLERGY_NAME",  columnDefinition = "NVARCHAR2(20)")
+	@Column(name = "ALLERGY_NAME",  columnDefinition = "NVARCHAR2(20)", nullable = false)
 	private String allergyName;
 
 	@Column(name = "ALLERGY_DESCRIPTION",  columnDefinition = "NVARCHAR2(200)")

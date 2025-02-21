@@ -5,9 +5,8 @@ import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -20,20 +19,21 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "MEMBER_ALLERGY_FOOD")
+@IdClass(MemberAllergyFood.class)
 public class MemberAllergyFood implements Serializable {
 
 	private static final long serialVersionUID = 655743065440798L;
 
 	@Id
-	@Column(name="MEM_ID", columnDefinition = "VARCHAR2(20)")
+	@Column(name="MEM_ID", columnDefinition = "VARCHAR2(20)", nullable = false)
 	private String memId;
 
 	@Id
-	@Column(name="ALLERGY_ID")
+	@Column(name="ALLERGY_ID", nullable = false)
 	private Long allergyId;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="MEM_ALLERGY_INSERT_AT")
+	@Column(name="MEM_ALLERGY_INSERT_AT", nullable = false)
 	private LocalDateTime memAllergyInsertAt;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -44,7 +44,7 @@ public class MemberAllergyFood implements Serializable {
 	@Column(name="MEM_ALLERGY_DELETE_AT")
 	private LocalDateTime memAllergyDeleteAt;
 
-	@Column(name="MEM_ALLERGY_IS_DELETED", columnDefinition = "CHAR(1)")
+	@Column(name="MEM_ALLERGY_IS_DELETED", columnDefinition = "CHAR(1)", nullable = false)
 	private String memAllergyIsDeleted;
 
 }

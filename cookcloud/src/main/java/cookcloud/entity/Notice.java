@@ -26,30 +26,30 @@ public class Notice implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="NOTICE_ID")
+	@Column(name="NOTICE_ID", nullable = false)
 	private Long noticeId;
 
-	@Column(name="NOTICE_TITLE", columnDefinition = "NVARCHAR2(50)")
+	@Column(name="NOTICE_TITLE", columnDefinition = "NVARCHAR2(50)", nullable = false)
 	private String noticeTitle;
 
-	@Column(name="NOTICE_CONTENT", columnDefinition = "NVARCHAR2(2000)")
+	@Column(name="NOTICE_CONTENT", columnDefinition = "NVARCHAR2(2000)", nullable = false)
 	private String noticeContent;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="NOTICE_INSERT_AT")
+	@Column(name="NOTICE_INSERT_AT", nullable = false)
 	private LocalDateTime noticeInsertAt;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="NOTICE_UPDATE_AT")
 	private LocalDateTime noticeUpdateAt;
 
-	@Column(name="NOTICE_IS_DELETED", columnDefinition = "CHAR(1)")
+	@Column(name="NOTICE_IS_DELETED", columnDefinition = "CHAR(1)", nullable = false)
 	private String noticeIsDeleted;
 
-	@Column(name="NOTICE_BOARD_CODE")
+	@Column(name="NOTICE_BOARD_CODE", nullable = false)
 	private Long noticeBoardCode;
 
-	@Column(name="NOTICE_ANSWER_NAME", columnDefinition = "NVARCHAR2(10)")
+	@Column(name="NOTICE_ANSWER_NAME", columnDefinition = "NVARCHAR2(10)", nullable = false)
 	private String noticeAnswerName;
 
 }

@@ -26,14 +26,14 @@ public class Review implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "REVIEW_ID")
+	@Column(name = "REVIEW_ID, nullable = false")
 	private Long reviewId;
 
-	@Column(name = "REVIEW_CONTENT", columnDefinition = "NVARCHAR2(1000)")
+	@Column(name = "REVIEW_CONTENT", columnDefinition = "NVARCHAR2(1000)", nullable = false)
 	private String reviewContent;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "REVIEW_INSERT_AT")
+	@Column(name = "REVIEW_INSERT_AT", nullable = false)
 	private LocalDateTime reviewInsertAt;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -44,13 +44,13 @@ public class Review implements Serializable {
 	@Column(name = "REVIEW_DELETE_AT")
 	private LocalDateTime reviewDeleteAt;
 
-	@Column(name = "REVIEW_IS_DELETED", columnDefinition = "CHAR(1)")
+	@Column(name = "REVIEW_IS_DELETED", columnDefinition = "CHAR(1)", nullable = false)
 	private String reviewIsDeleted;
 
-	@Column(name = "RECIPE_ID")
+	@Column(name = "RECIPE_ID", nullable = false)
 	private Long recipeId;
 
-	@Column(name = "MEM_ID", columnDefinition = "VARCHAR2(20)")
+	@Column(name = "MEM_ID", columnDefinition = "VARCHAR2(20)", nullable = false)
 	private String memId;
 
 }

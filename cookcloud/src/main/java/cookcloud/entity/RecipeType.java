@@ -26,11 +26,11 @@ public class RecipeType implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="RECIPETYPE_ID")
+	@Column(name="RECIPETYPE_ID", nullable = false)
 	private Long recipeTypeId;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="RECIPETYPE_INSERT_AT")
+	@Column(name="RECIPETYPE_INSERT_AT", nullable = false)
 	private LocalDateTime recipeTypeInsertAt;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -41,13 +41,13 @@ public class RecipeType implements Serializable {
 	@Column(name="RECIPETYPE_DELETE_AT")
 	private LocalDateTime recipeTypeDeleteAt;
 
-	@Column(name="RECIPETYPE_IS_DELETED", columnDefinition = "CHAR(1)")
+	@Column(name="RECIPETYPE_IS_DELETED", columnDefinition = "CHAR(1)", nullable = false)
 	private String recipeTypeIsDeleted;
 
-	@Column(name="RECIPETYPE_CODE")
+	@Column(name="RECIPETYPE_CODE", nullable = false)
 	private Long recipeTypeCode;
 
-	@Column(name="RECIPE_ID")
+	@Column(name="RECIPE_ID", nullable = false)
 	private Long recipeId;
 	
 }

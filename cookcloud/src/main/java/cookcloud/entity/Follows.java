@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -19,8 +20,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "FOLLOW")
-public class Follow implements Serializable {
+@Table(name = "FOLLOWS")
+@IdClass(FollowsId.class)
+public class Follows implements Serializable {
 
 	private static final long serialVersionUID = 896895357863219L;
 

@@ -26,36 +26,36 @@ public class Attachment implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="ATTACH_ID")
+	@Column(name="ATTACH_ID", nullable = false)
 	private Long attachId;
 
-	@Column(name="ATTACH_UPLOAD_NAME", columnDefinition = "NVARCHAR2(100)")
+	@Column(name="ATTACH_UPLOAD_NAME", columnDefinition = "NVARCHAR2(100)", nullable = false)
 	private String attachUploadName;
 
-	@Column(name="ATTACH_SERVER_NAME", columnDefinition = "NVARCHAR2(200)")
+	@Column(name="ATTACH_SERVER_NAME", columnDefinition = "NVARCHAR2(200)", nullable = false)
 	private String attachServerName;
 
-	@Column(name="ATTACH_SIZE")
+	@Column(name="ATTACH_SIZE", nullable = false)
 	private Long attachSize;
 
-	@Column(name="ATTACH_ORDER")
+	@Column(name="ATTACH_ORDER", nullable = false)
 	private Long attachOrder;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="ATTACH_INSERT_AT")
+	@Column(name="ATTACH_INSERT_AT", nullable = false)
 	private LocalDateTime attachInsertAt;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="ATTACH_DELETE_AT")
 	private LocalDateTime attachDeleteAt;
 
-	@Column(name="ATTACH_IS_DELETED", columnDefinition = "CHAR(1)")
+	@Column(name="ATTACH_IS_DELETED", columnDefinition = "CHAR(1)", nullable = false)
 	private String attachIsDeleted;
 
-	@Column(name="ATTACH_TYPE_CODE")
+	@Column(name="ATTACH_TYPE_CODE", nullable = false)
 	private Long attachTypeCode;
 
-	@Column(name="RECIPE_ID")
+	@Column(name="RECIPE_ID", nullable = false)
 	private Long recipeId;
 
 }

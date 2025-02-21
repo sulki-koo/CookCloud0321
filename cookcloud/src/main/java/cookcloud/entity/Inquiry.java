@@ -26,24 +26,24 @@ public class Inquiry implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="INQUIRY_ID")
+	@Column(name="INQUIRY_ID", nullable = false)
 	private Long inquiryId;
 
-	@Column(name="INQUIRY_TITLE", columnDefinition = "NVARCHAR2(50)")
+	@Column(name="INQUIRY_TITLE", columnDefinition = "NVARCHAR2(50)", nullable = false)
 	private String inquiryTitle;
 
-	@Column(name="INQUIRY_CONTENT",  columnDefinition = "NVARCHAR2(2000)")
+	@Column(name="INQUIRY_CONTENT",  columnDefinition = "NVARCHAR2(2000)", nullable = false)
 	private String inquiryContent;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="INQUIRY_INSERT_AT")
+	@Column(name="INQUIRY_INSERT_AT", nullable = false)
 	private LocalDateTime inquiryInsertAt;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="INQUIRY_UPDATE_AT")
 	private LocalDateTime inquiryUpdateAt;
 
-	@Column(name="INQUIRY_IS_DELETED", columnDefinition = "CHAR(1)")
+	@Column(name="INQUIRY_IS_DELETED", columnDefinition = "CHAR(1)", nullable = false)
 	private String inquiryIsDeleted;
 
 	@Column(name="INQUIRY_ANSWER_NAME",  columnDefinition = "NVARCHAR2(10)")
@@ -52,16 +52,16 @@ public class Inquiry implements Serializable {
 	@Column(name="INQUIRY_ANSWER",  columnDefinition = "NVARCHAR2(100)")
 	private String inquiryAnswer;
 
-	@Column(name="INQUIRY_TYPE_CODE")
+	@Column(name="INQUIRY_TYPE_CODE", nullable = false)
 	private Long inquiryTypeCode;
 
-	@Column(name="INQUIRY_STATUS_CODE")
+	@Column(name="INQUIRY_STATUS_CODE", nullable = false)
 	private Long inquiryStatusCode;
 
-	@Column(name="INQUIRY_BOARD_CODE")
+	@Column(name="INQUIRY_BOARD_CODE", nullable = false)
 	private Long inquiryBoardCode;
 
-	@Column(name="MEM_ID", columnDefinition = "NVARCHAR2(20)")
+	@Column(name="MEM_ID", columnDefinition = "NVARCHAR2(20)", nullable = false)
 	private String memId;
 
 }

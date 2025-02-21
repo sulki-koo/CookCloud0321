@@ -1,9 +1,9 @@
 package cookcloud.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class ReviewRepository extends JpaRepository<T, ID>{
+import cookcloud.entity.Review;
+
+public interface ReviewRepository extends JpaRepository<Review, Long>{
 
 }

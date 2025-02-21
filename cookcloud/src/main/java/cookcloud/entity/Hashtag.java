@@ -23,16 +23,16 @@ public class Hashtag implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="HASH_ID")
+	@Column(name="HASH_ID", nullable = false)
 	private Long hashId;
 
-	@Column(name="HASH_NAME", columnDefinition = "NVARCHAR2(20)")
+	@Column(name="HASH_NAME", columnDefinition = "NVARCHAR2(20)", nullable = false)
 	private String hashName;
 
-	@Column(name="HASH_CODE")	
+	@Column(name="HASH_CODE", nullable = false)	
 	private Long hashtagCode;
 
-	@Column(name="HASH_USAGE_COUNT")
+	@Column(name="HASH_USAGE_COUNT", nullable = false)
 	private Long hashUsageCount;
 
 }

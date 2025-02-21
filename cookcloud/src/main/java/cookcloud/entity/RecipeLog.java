@@ -26,17 +26,17 @@ public class RecipeLog implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="LOGGING_ID")
+	@Column(name="LOGGING_ID", nullable = false)
 	private Long loggingId;
 
-	@Column(name="LOGGING_ACTION", columnDefinition = "VARCHAR2(20)")
+	@Column(name="LOGGING_ACTION", columnDefinition = "VARCHAR2(20)", nullable = false)
 	private String loggingAction;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="LOGGING_INSERT_AT")
+	@Column(name="LOGGING_INSERT_AT", nullable = false)
 	private LocalDateTime loggingInsertAt;
 
-	@Column(name="RECIPE_ID")
+	@Column(name="RECIPE_ID", nullable = false)
 	private Long recipeId;
 
 }
